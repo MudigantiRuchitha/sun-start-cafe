@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Place an online Sun Star Café order by phone or email. Send your items, quantities and pickup or delivery details.">
+  <title>Order Online | Sun Star Café</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="menu-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Sun Star Cafe home">
+      <span class="brand-icon" aria-hidden="true">☀</span>
+      <span>Sun Star <small>CAFÉ</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="cart.html">Cart <span class="cart-link">🛒 <span id="cartCount">0</span></span></a>
+      <a href="index.html#about">Our café</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-page section" aria-labelledby="contactTitle">
+      <div class="contact-page-intro">
+        <span class="eyebrow">YOUR SUN STAR ORDER STARTS HERE</span>
+        <h1 id="contactTitle">Order something delicious.</h1>
+        <p>Place your order by calling or emailing us. Tell us what you’d like, how many you need, and whether you’d prefer pickup or delivery.</p>
+      </div>
+      <div class="contact-details-grid">
+        <article class="contact-detail-card">
+          <span class="contact-detail-icon" aria-hidden="true">↗</span>
+          <span class="contact-detail-label">ORDER BY PHONE</span>
+          <h2>Call to place your order</h2>
+          <a href="tel:6300462566">6300462566</a>
+          <p>Share your items and quantities, then confirm pickup or delivery details with us.</p>
+        </article>
+        <article class="contact-detail-card">
+          <span class="contact-detail-icon" aria-hidden="true">✉</span>
+          <span class="contact-detail-label">ORDER BY EMAIL</span>
+          <h2>Email your order</h2>
+          <a href="mailto:cheelaabhinav73@gmail.com?subject=Sun%20Star%20Cafe%20Order&amp;body=Hello%20Sun%20Star%20Cafe%2C%0A%0AI%20would%20like%20to%20place%20an%20order.%0A%0AName%3A%20%0APhone%3A%20%0AItems%20and%20quantities%3A%20%0APickup%20or%20delivery%3A%20%0ADelivery%20address%20(if%20needed)%3A%20%0APreferred%20time%3A%20%0A%0APlease%20confirm%20availability%20and%20the%20order%20total.">cheelaabhinav73@gmail.com</a>
+          <p>Include your name, phone, items, quantities, pickup or delivery, and preferred time.</p>
+        </article>
+      </div>
+      <p class="contact-order-note">Please wait for us to confirm item availability, your order total and pickup or delivery arrangements.</p>
+      <a class="contact-page-menu-link" href="menu.html">Browse the café menu <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="index.html"><span class="brand-icon" aria-hidden="true">☀</span><span>Sun Star <small>CAFÉ</small></span></a>
+    <p>Made with ☕ and care. © <span id="year"></span> Sun Star Café.</p>
+  </footer>
+</body>
+</html>

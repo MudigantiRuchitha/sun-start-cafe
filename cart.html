@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Review your Sun Star Cafe cart and place your order.">
+  <title>Your Cart | Sun Star Café</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="menu-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Sun Star Cafe home">
+      <span class="brand-icon">☀</span>
+      <span>Sun Star <small>CAFÉ</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="cart.html" aria-current="page">Cart <span class="cart-link">🛒 <span id="cartCount">0</span></span></a>
+      <a href="index.html#about">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="cart-section section cart-page">
+      <div class="section-heading">
+        <div><span class="eyebrow">ALMOST THERE</span><h1>Your Cart <span>🛒</span></h1></div>
+        <p>Review your selections before checkout. <a href="menu.html">Add more from the menu</a>.</p>
+      </div>
+      <div class="cart-panel">
+        <div id="cartItems" class="cart-items">Your cart is empty. Add something delicious from our menu!</div>
+        <div class="cart-summary">
+          <div class="summary-line"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+          <div class="summary-line"><span>Delivery fee</span><strong id="deliveryFee">₹0</strong></div>
+          <div class="summary-line total-line"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+          <p class="small-note">Delivery fee is currently ₹0. Update the fee and pricing policy before launch.</p>
+          <button id="checkoutBtn" class="primary-button full-width" disabled>Continue to Order Details ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="order-section section" id="order">
+      <div class="section-heading">
+        <div><span class="eyebrow">FRESH FOOD, JUST A FEW CLICKS AWAY</span><h2>Order Details</h2></div>
+        <p>Tell us where to send your order, then continue to payment.</p>
+      </div>
+      <form id="orderForm" class="order-form">
+        <div class="order-form-grid">
+          <div class="form-field"><label for="customerName">Your name</label><input id="customerName" name="customerName" autocomplete="name" maxlength="100" required placeholder="Enter your name"></div>
+          <div class="form-field"><label for="customerPhone">Phone number</label><input id="customerPhone" name="customerPhone" type="tel" autocomplete="tel" maxlength="20" pattern="[0-9+\(\) \x2d]{8,20}" required placeholder="Enter your phone number"></div>
+          <div class="form-field"><label for="customerEmail">Email address</label><input id="customerEmail" name="customerEmail" type="email" autocomplete="email" maxlength="254" required placeholder="Enter your email for order updates"></div>
+          <div class="form-field"><label for="orderType">Order type</label><select id="orderType" name="orderType"><option value="Delivery">Home delivery</option><option value="Pickup">Pickup at café</option></select></div>
+          <div class="form-field"><label for="paymentMethod">Payment method</label><select id="paymentMethod" name="paymentMethod"><option value="PHONEPE">Pay online with PhonePe</option><option value="CASH">Cash on delivery / at café pickup</option></select></div>
+          <div class="form-field" id="addressField"><label for="customerAddress">Delivery address</label><input id="customerAddress" name="customerAddress" autocomplete="street-address" maxlength="500" required placeholder="House no., street, area"></div>
+          <div class="form-field form-field-wide"><label for="orderNotes">Order notes (optional)</label><textarea id="orderNotes" name="orderNotes" maxlength="300" placeholder="Spice level, preferences, or other instructions"></textarea></div>
+          <div class="form-field form-field-wide remember-details">
+            <label><input id="rememberDetails" name="rememberDetails" type="checkbox"> Remember my contact and delivery details on this device</label>
+            <p class="small-note">Saved only in this browser so you can use them next time. Don't select this on a shared device.</p>
+          </div>
+        </div>
+        <div class="order-form-footer"><p id="paymentMethodNote" class="small-note">Pay securely using PhonePe. We verify the transaction before confirming your order.</p><button id="submitOrderButton" type="submit" class="primary-button">Continue to payment →</button></div>
+        <p id="orderStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <section id="paymentPanel" class="payment-panel" aria-labelledby="paymentPanelTitle" hidden>
+        <div class="payment-panel-heading">
+          <span class="eyebrow">ORDER STATUS</span>
+          <h2 id="paymentPanelTitle">Order status</h2>
+          <p id="paymentStatusDescription">Checking your payment securely with PhonePe.</p>
+        </div>
+        <p id="paymentVerificationStatus" class="form-status" role="status" aria-live="polite">Payment status: Not started.</p>
+        <div id="orderConfirmation" class="payment-recipient" hidden>
+          <strong>Your order has been placed!</strong>
+          <span id="confirmedOrderReference"></span>
+          <span id="deliveryEstimate"></span>
+        </div>
+        <button id="retryPaymentStatus" type="button" class="secondary-button" hidden>Check payment status again</button>
+      </section>
+    </section>
+  </main>
+  <footer>
+    <a class="brand footer-brand" href="index.html"><span class="brand-icon">☀</span><span>Sun Star <small>CAFÉ</small></span></a>
+    <p>Made with ☕ and care. © <span id="year"></span> Sun Star Café.</p>
+  </footer>
+</body>
+</html>

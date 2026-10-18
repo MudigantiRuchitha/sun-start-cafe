@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Café Admin | Sun Star Café</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <main class="admin-shell">
+    <header class="admin-header">
+      <a class="admin-brand" href="index.html"><span aria-hidden="true">☀</span> Sun Star Café</a>
+      <p>Order management</p>
+    </header>
+
+    <section id="loginPanel" class="admin-panel admin-login" aria-labelledby="loginTitle">
+      <span class="admin-eyebrow">STAFF ACCESS</span>
+      <h1 id="loginTitle">Sign in to manage orders</h1>
+      <form id="loginForm">
+        <label for="adminPassword">Admin password</label>
+        <input id="adminPassword" name="password" type="password" autocomplete="current-password" required maxlength="256">
+        <button id="loginButton" class="admin-button" type="submit">Sign in</button>
+      </form>
+      <p id="loginMessage" class="admin-message" role="status" aria-live="polite"></p>
+      <button id="retryConnection" class="admin-button admin-button-secondary" type="button" hidden>Retry connection</button>
+    </section>
+
+    <section id="dashboard" class="admin-dashboard" aria-labelledby="ordersTitle" hidden>
+      <div class="admin-orders-heading">
+        <div>
+          <span class="admin-eyebrow">ORDER MANAGEMENT</span>
+          <h1 id="ordersTitle">Orders</h1>
+        </div>
+        <div class="admin-actions">
+          <button id="refreshOrders" class="admin-button admin-button-secondary" type="button">Refresh</button>
+          <button id="logoutButton" class="admin-button admin-button-secondary" type="button">Sign out</button>
+        </div>
+      </div>
+      <p id="ordersMessage" class="admin-message" role="status" aria-live="polite"></p>
+      <div id="ordersList" class="admin-orders-list" aria-live="polite"></div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "sun-star-cafe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sun Star Cafe website with verified PhonePe checkout",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "build": "node build-static.js",
+    "start": "node --env-file-if-exists=.env server.js",
+    "test": "node --test",
+    "test:email": "node --env-file-if-exists=.env smtp-check.js"
+  },
+  "dependencies": {
+    "nodemailer": "^10.1.2"
+  }
+}

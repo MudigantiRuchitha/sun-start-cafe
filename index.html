@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover fresh coffee, warm puffs and satisfying café favourites at Sun Star Café.">
+  <title>Sun Star Café | Freshly Made, Always Welcoming</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+  <script src="menu-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="home-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Sun Star Cafe home">
+      <span class="brand-icon" aria-hidden="true">☀</span>
+      <span>Sun Star <small>CAFÉ</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="cart.html">Cart <span class="cart-link">🛒 <span id="cartCount">0</span></span></a>
+      <a href="#about">Our café</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="homeTitle">
+      <div class="hero-content">
+        <span class="eyebrow hero-eyebrow">YOUR NEIGHBOURHOOD CAFÉ</span>
+        <h1 id="homeTitle">Good days start with <em>something delicious.</em></h1>
+        <p>Freshly brewed coffee, warm savoury puffs and comforting favourites—made with care for the little moments that make your day.</p>
+        <div class="hero-actions">
+          <a class="hero-secondary-link" href="#about">Meet your café <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-notes" aria-label="The Sun Star experience">
+          <span><span aria-hidden="true">✦</span> Freshly prepared</span>
+          <span><span aria-hidden="true">✦</span> Everyday favourites</span>
+          <span><span aria-hidden="true">✦</span> Made with care</span>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap" aria-label="A taste of Sun Star Café">
+        <img class="hero-image"
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1100&q=85"
+          alt="Freshly brewed coffee served in a warm café" fetchpriority="high">
+        <div class="hero-image-frame" aria-hidden="true"></div>
+        <figure class="hero-photo-card hero-photo-card-snack">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=420&q=80"
+            alt="Fresh café burger" loading="lazy">
+          <figcaption><span class="photo-card-dot" aria-hidden="true"></span> A fresh little bite</figcaption>
+        </figure>
+        <figure class="hero-photo-card hero-photo-card-coffee">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=420&q=80"
+            alt="A cup of freshly brewed coffee" loading="lazy">
+          <figcaption><span class="photo-card-dot" aria-hidden="true"></span> Your coffee moment</figcaption>
+        </figure>
+        <div class="image-sticker"><span aria-hidden="true">☀</span><strong>Take a moment.<br>Make it delicious.</strong></div>
+        <div class="hero-image-caption"><span class="caption-dot" aria-hidden="true"></span> GOOD THINGS ARE BREWING</div>
+      </div>
+    </section>
+
+    <section class="home-highlights" aria-label="What makes Sun Star special">
+      <article class="highlight-item">
+        <span class="highlight-icon" aria-hidden="true">☕</span>
+        <div><h2>Made fresh</h2><p>Everyday favourites, thoughtfully prepared.</p></div>
+      </article>
+      <article class="highlight-item">
+        <span class="highlight-icon" aria-hidden="true">✿</span>
+        <div><h2>Something for every craving</h2><p>Comforting sips, savoury bites and meals.</p></div>
+      </article>
+      <article class="highlight-item">
+        <span class="highlight-icon" aria-hidden="true">♡</span>
+        <div><h2>A warm welcome</h2><p>Your neighbourhood spot for a happy break.</p></div>
+      </article>
+    </section>
+
+    <section class="home-menu section" id="favourites" aria-labelledby="homeMenuTitle">
+      <div class="home-menu-heading">
+        <div>
+          <span class="eyebrow">A LITTLE SOMETHING FOR EVERY CRAVING</span>
+          <h2 id="homeMenuTitle">Your café moment, your way.</h2>
+          <p>Keep it light with a warm puff, take a coffee break, or settle in for a satisfying meal.</p>
+        </div>
+      </div>
+      <div class="home-menu-grid">
+        <figure class="home-menu-card home-menu-card-puffs">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Egg_Puff1.jpg/500px-Egg_Puff1.jpg"
+            alt="Golden, flaky egg puff" loading="lazy">
+        </figure>
+        <figure class="home-menu-card home-menu-card-drinks">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85"
+            alt="Freshly brewed coffee ready for a break" loading="lazy">
+        </figure>
+        <figure class="home-menu-card home-menu-card-meals">
+          <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=85"
+            alt="A satisfying plate of fried rice" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="about-section section" id="about" aria-labelledby="aboutTitle">
+      <div class="about-intro">
+        <span class="eyebrow">INSIDE SUN STAR CAFÉ</span>
+        <h2 id="aboutTitle">A neighbourhood café for every kind of craving.</h2>
+        <p>Sun Star Café brings together the everyday favourites that make a break feel special—from a comforting cup and a savoury snack to a filling meal. Choose what suits your moment, whether you’re stopping in or ordering online.</p>
+      </div>
+      <div class="about-offerings">
+        <article class="about-offering">
+          <span class="about-offering-icon" aria-hidden="true">☕</span>
+          <span class="about-offering-label">FOR A LITTLE PAUSE</span>
+          <h3>Coffee &amp; tea</h3>
+          <p>Take five with a hot coffee or classic Indian-style tea—an easy companion for a quiet moment or a catch-up.</p>
+          <span class="about-menu-examples">Hot coffee · Classic tea</span>
+        </article>
+        <article class="about-offering">
+          <span class="about-offering-icon" aria-hidden="true">✳</span>
+          <span class="about-offering-label">SOMETHING SAVOURY</span>
+          <h3>Puffs &amp; snacks</h3>
+          <p>Find a quick bite in flaky egg, veg or chicken puffs, or make it a snack break with a burger, sandwich or pizza.</p>
+          <span class="about-menu-examples">Three puff choices · Café snacks</span>
+        </article>
+        <article class="about-offering">
+          <span class="about-offering-icon" aria-hidden="true">◒</span>
+          <span class="about-offering-label">WHEN YOU’RE HUNGRY</span>
+          <h3>Comforting meals</h3>
+          <p>Settle in for a more filling plate with fried rice choices for different appetites.</p>
+          <span class="about-menu-examples">Veg · Egg · Chicken</span>
+        </article>
+      </div>
+      <div class="about-ordering">
+        <span class="about-ordering-icon" aria-hidden="true">↗</span>
+        <div>
+          <span class="about-offering-label">YOUR ORDER, YOUR WAY</span>
+          <h3>Make it an easy café break.</h3>
+          <p>Choose your favourites, adjust quantities in your cart, then select pickup or delivery at checkout.</p>
+        </div>
+        <span class="about-ordering-note">A little something for every day <span aria-hidden="true">☀</span></span>
+      </div>
+      <p class="about-signoff"><span aria-hidden="true">☀</span> Good food, a warm welcome, and a little moment to yourself.</p>
+    </section>
+
+    <section class="home-cta section">
+      <div class="contact-callout">
+        <span class="eyebrow">YOUR NEXT GOOD BITE IS CLOSER THAN YOU THINK</span>
+        <h2>Make today a little more delicious.</h2>
+        <p>From a quick coffee to your favourite warm snack, there’s always a good reason to take a break.</p>
+        <a class="primary-button contact-button" href="menu.html">Order from the menu <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="contact-image" role="img" aria-label="A freshly made café coffee"></div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="index.html"><span class="brand-icon" aria-hidden="true">☀</span><span>Sun Star <small>CAFÉ</small></span></a>
+    <p>Made with ☕ and care. © <span id="year"></span> Sun Star Café.</p>
+  </footer>
+</body>
+</html>

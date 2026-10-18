@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the Sun Star Cafe menu and add your favourites to the cart.">
+  <title>Menu | Sun Star Café</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="menu-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="menu-page-body">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Sun Star Cafe home">
+      <span class="brand-icon">☀</span>
+      <span>Sun Star <small>CAFÉ</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="menu.html" aria-current="page">Menu</a>
+      <a href="cart.html">Cart <span class="cart-link">🛒 <span id="cartCount">0</span></span></a>
+      <a href="index.html#about">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="menu-section section menu-page">
+      <div class="section-heading">
+        <div class="menu-title">
+          <span class="eyebrow">A LITTLE SOMETHING FOR EVERY CRAVING</span>
+          <h1>Made fresh. <em>Made for you.</em></h1>
+          <p>Explore cafe favourites, baked snacks and satisfying meals, prepared with care.</p>
+        </div>
+      </div>
+      <div class="category-filters" id="categoryFilters" aria-label="Filter menu by category"></div>
+      <p id="cartAddStatus" class="sr-only" role="status" aria-live="polite"></p>
+      <div class="menu-grid" id="menuItems" aria-live="polite"></div>
+    </section>
+    <aside id="menuCartSummary" class="menu-cart-summary" hidden>
+      <a id="menuCartLink" class="menu-cart-link" href="cart.html">
+        <span class="menu-cart-icon" aria-hidden="true">🛒<span id="menuCartCount">0</span></span>
+        <span class="menu-cart-details">
+          <strong>Your cart</strong>
+          <span id="menuCartTotal">0 items · ₹0</span>
+        </span>
+        <span class="menu-cart-action">View cart <span aria-hidden="true">→</span></span>
+      </a>
+    </aside>
+  </main>
+  <footer>
+    <a class="brand footer-brand" href="index.html"><span class="brand-icon">☀</span><span>Sun Star <small>CAFÉ</small></span></a>
+    <p>Made with ☕ and care. © <span id="year"></span> Sun Star Café.</p>
+  </footer>
+</body>
+</html>
