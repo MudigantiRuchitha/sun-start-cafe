@@ -58,13 +58,15 @@ If `.env` is missing, the website server still starts and serves the pages, but 
 
 ### Publish a shareable website with Render
 
-The repository includes `render.yaml` to run this Node app as a public Render web service. To publish it, push the **contents of this project folder** to a GitHub repository, then in Render choose **New → Blueprint**, connect that repository, and deploy. Render provides the shareable `https://<service-name>.onrender.com` address after deployment. This workspace has no connected Git remote, so there is no public URL until the project is pushed and deployed through an account you control.
+The repository includes `render.yaml` to run the complete website and Node backend together as a Render web service. The Vercel deployment is not the supported deployment for this app: checkout and admin use the Node server's API endpoints, so use Render for the full site.
 
-The server binds to `0.0.0.0` by default so Render's web proxy can reach it. After changing deployment settings or code, trigger a Render deploy and check that its `/healthz` health check passes before sharing the service URL.
+1. Sign in to Render, choose **New → Blueprint**, and connect the GitHub repository `MudigantiRuchitha/sun-start-cafe`.
+2. Render reads `render.yaml`, installs dependencies, runs the test suite, and starts the Node server. Enter the requested secrets when prompted: `ADMIN_PASSWORD` (at least 16 characters), PhonePe sandbox `PHONEPE_CLIENT_ID`, `PHONEPE_CLIENT_SECRET`, and `PHONEPE_CLIENT_VERSION`, plus SMTP settings if email notifications should be enabled. Keep these values in Render's environment settings; never commit them or put them in frontend files.
+3. Deploy the Blueprint. In the service's **Settings → Environment**, leave `PHONEPE_ENV=SANDBOX` while testing. Render automatically supplies the public URL, which the backend uses for checkout redirects.
+4. Wait for the deployment and `/healthz` health check to succeed, then open the service's `https://<service-name>.onrender.com` URL. The home page and `/admin.html` are served by the same backend, so frontend API requests use the correct origin. Sign in to admin with the `ADMIN_PASSWORD` configured in Render.
+5. Test with PhonePe sandbox credentials. Do not enable production payments or accept live customer orders until production credentials are configured and persistent order storage is in place.
 
-The initial Render service intentionally has PhonePe credentials unset, so the website can be viewed publicly but checkout reports that it is not configured. After creating your PhonePe sandbox credentials, add `PHONEPE_CLIENT_ID`, `PHONEPE_CLIENT_SECRET`, and `PHONEPE_CLIENT_VERSION` under the Render service's secret environment variables, and set a unique `ADMIN_PASSWORD` of at least 16 characters. Use `PHONEPE_ENV=SANDBOX` while testing.
-
-The free Render service has an ephemeral filesystem and may sleep; it is for previewing the website, not reliable payment/order storage. **Do not enable real payments on this configuration.** Before live transactions, use a persistent database/storage setup, select `PHONEPE_ENV=PRODUCTION`, and verify HTTPS, PhonePe production credentials, merchant settlements, and order operations.
+The Blueprint uses Render's free plan. It can run the full site and backend, but its filesystem is ephemeral and the service may sleep; saved orders can be lost when the service restarts or redeploys. **Do not use this configuration for live payments or dependable order storage.** Before live transactions, configure a persistent database or paid persistent disk, select `PHONEPE_ENV=PRODUCTION`, and verify HTTPS, PhonePe production credentials, merchant settlements, and order operations.
 
 ### Publish a static preview with Netlify
 
